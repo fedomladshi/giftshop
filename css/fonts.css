@@ -1,0 +1,13 @@
+@font-face{
+    font-family: 'BigJhon';
+    src: url('../fonts/BIG JOHN.otf');
+}
+@font-face{
+    font-family: 'SourceSansPro-Light';
+    src: url(../fonts/SourceSansPro-Light.ttf);
+    font-weight: bold;
+}
+@font-face{
+    font-family: 'Open-sans';
+    src: url(../fonts/Open-sans.ttf);
+}
