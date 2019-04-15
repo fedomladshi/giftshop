@@ -1,0 +1,28 @@
+.container {
+	margin: 0 auto;
+	width: 50%;
+	height: 500px;
+}
+
+a,b{
+
+	text-align: center;
+}
+.a, .b {
+	padding: 20px 0;
+	width: 50%;
+	float: left;
+	background: #fff;
+	text-align: center;
+}
+.b {
+	float: right;
+}
+.change {
+	height: 300px;
+	background: #445;
+	color:#445;
+}
+body {
+background: url(images/headerphoto.jpg) no-repeat top / cover;
+}
