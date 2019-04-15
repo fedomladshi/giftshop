@@ -6,12 +6,7 @@
     font-family: 'TitilliumWeb-Regular';
     src: url('../assets/fonts/TitilliumWeb-Regular.ttf');
 }
-/* @font-face{
-    font-family: 'SourceSansPro-Light';
-    src: url(../fonts/SourceSansPro-Light.ttf);
-    font-weight: bold;
-}
 @font-face{
-    font-family: 'Open-sans';
-    src: url(../fonts/Open-sans.ttf);
-} */
+    font-family: 'TitilliumWeb-SemiBold';
+    src: url('../assets/fonts/TitilliumWeb-SemiBold.ttf');
+}
