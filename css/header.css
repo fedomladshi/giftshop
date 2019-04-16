@@ -152,11 +152,11 @@
 
 .header-middle__subtitle {
     font-size: 36px;
+}
+.f-sbold {
     font-family: 'TitilliumWeb-SemiBold';
 }
-
 .header-up__title {
-    font-family: 'TitilliumWeb-SemiBold';
     letter-spacing: 0.5px;
     text-decoration: none;
     margin-bottom: 17px;

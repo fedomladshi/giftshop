@@ -1,18 +1,16 @@
 .section-1 {
     display: flex;
     justify-content: center;
-    margin-top: 230px;
+    margin-top: 242px;
 }
 .block {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    /* margin: 0 40px 0 0; */
     width: 360px;
 }
 .block-top {
     display: flex;
-    margin-bottom: 25px;
+    margin-bottom: 31px;
 }
 .block-top__right {
     display: flex;
@@ -21,8 +19,6 @@
 }
 .d-flex {
     display: flex;
-    justify-content: center;
-    padding-left: 123px;
 }
 .block-top__image {
    
@@ -36,15 +32,18 @@
 .block-top__subtitle {
     font-size: 18px;
     color: rgb(149, 147, 147);
-    letter-spacing: 0.6px;
+    letter-spacing: 0.4px;
     margin-top: 5px;
 }
 .block-bottom__text {
+    display: flex;
     font-size: 14px;
     color: rgb(149, 147, 147);
     line-height: 1.5;
 }
 .image-1__location {
+    position: relative;
+    bottom: 3px;
     margin-right: 19px;
 }
 .image-2__location {
@@ -56,4 +55,86 @@
 .block-top__left {
     position: relative;
     top:5px;
+}
+ .block-1__line {
+     margin-right: 18px;
+ }
+ .block-3__line {
+    margin-left: 50px;
+}
+
+.block-2__line:after {
+    content: "";
+    position: relative;
+    right: 43px;
+    bottom: 294px;
+    height: 210px;
+    width: 1px;
+    background-color: rgb(185, 185, 185);
+}
+
+
+.content__left {
+    display: flex;
+    flex-direction: column;
+    width: 947px;
+    height: 466px;
+    border-right: 1px solid rgb(185, 185, 185);
+    border-bottom: 1px solid rgb(185, 185, 185);
+}
+.content__right {
+    width: 453px;
+}
+.content__top {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 93px;
+}
+.content__bottom {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+ 
+}
+.section-1__button {
+    position: absolute;
+    top: 85px;
+    right: -163px;
+
+}
+.button-1 {
+    text-decoration: none;
+    color: rgb(103, 103, 103);
+    border: 1px solid rgb(185, 185, 185);
+    padding: 17px 35px;
+    border-radius: 35px;
+    background-color: #fff;
+}
+.button-1__text {
+    position: relative;
+    bottom:3px;
+}
+.bottom-content {
+    position: relative;
+    bottom: 86px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 45px;
+}
+.title-top {
+    display: flex;
+    justify-content: flex-end;
+}
+.title-top__text {
+    font-size: 60px;
+    color: rgb(83, 83, 83);
+    margin-bottom: 16px;
+}
+.title-bottom__text  {
+    font-size: 24px;
+    color: rgb(149, 147, 147);
+}
+.title-bottom__span {
+    display: flex;
+    justify-content: flex-end;
 }
