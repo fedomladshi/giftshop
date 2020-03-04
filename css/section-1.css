@@ -1,161 +1,191 @@
-.section-1 {
+.section-slider {
+    padding-top: 228px;
+}
+
+.slider {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 670px 494px;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "m w"
+        "m k";
+    grid-gap: 5px;
+}
+
+
+.men {
+    display: flex;
+    align-items: flex-end;
+    background-image: url("/assets/images/men\'s\ wear.png");
+    background-repeat: no-repeat;
+    grid-area: m;
+    padding-bottom: 12px;
+}
+
+.men-info {
+    width: 348px;
+}
+
+.women-info {
+    width: 267px;
+}
+
+.men-info__article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #362a4f;
+    opacity: 0.8;
+    height: 105px;
+}
+
+.men-info__article-title {
+    color: #ef5966;
+    font-family: "Aparajita";
+    font-size: 58px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 13px;
+    letter-spacing: 1.5px;
+}
+
+.men-info__article-description {
+    position: relative;
+    bottom: 8px;
+    color: #ffffff;
+    font-family: "Lato-Bold";
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-left: 22px;
+    letter-spacing: 0.26px;
+}
+
+
+.men-info__theme {
     display: flex;
     justify-content: center;
-    width: 100%;
-    height: 468px;
-    margin-top: 118px;
-
+    align-items: center;
+    background-color: #ef5966;
+    height: 41px;
+    opacity: 0.88;
+    margin-top: 2px;
 }
-.block {
+
+.men-info__theme-text {
+    letter-spacing: 0.43px;
+    color: #ffffff;
+    font-family: "Aparajita";
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    /* margin: 10px 14px 12px 15px; */
+}
+
+.women {
+    display: flex;
+    align-items: flex-end;
+    grid-area: w;
+    height: 320px;
+    background-image: url("/assets/images/women\'s\ wear.png");
+}
+
+.women-info {
+    margin-bottom: 8px;
+}
+
+.women-info__article {
     display: flex;
     flex-direction: column;
-    width: 360px;
-}
-.block-top {
-    display: flex;
-    margin-bottom: 31px;
-}
-.block-top__right {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.d-flex {
-    display: flex;
+    align-items: center;
+    height: 83px;
+    background-color: #362a4f;
+    opacity: 0.8;
 }
 
-.block-top__title {
-    font-size: 30px;
-}
-.с-85 {
-    color: rgb(85, 85, 85);
-}
-.block-top__subtitle {
-    font-size: 18px;
-    color: rgb(149, 147, 147);
-    letter-spacing: 0.4px;
-    margin-top: 5px;
-}
-.block-bottom__text {
-    display: flex;
-    font-size: 14px;
-    color: rgb(149, 147, 147);
-    line-height: 1.5;
-}
-.image-1__location {
-    position: relative;
-    bottom: 3px;
-    margin-right: 19px;
-}
-.image-2__location {
-    margin-right: 17px;
-}
-.image-3__location {
-    margin-right: 16px;
-}
-.block-top__left {
-    position: relative;
-    top:5px;
-}
- .block-1__line {
-     margin-right: 18px;
- }
- .block-3__line {
-    margin-left: 50px;
+.women-info__article-title {
+    color: #ef5966;
+    font-family: "Aparajita";
+    font-size: 35px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 13px;
+    letter-spacing: 1.5px;
 }
 
-.block-2__line:after {
-    content: "";
+.women-info__article-description {
     position: relative;
-    right: 43px;
-    bottom: 294px;
-    height: 210px;
-    width: 1px;
-    background-color: rgb(185, 185, 185);
-}
-.block-3__line:before {
-    content: "";
-    position: relative;
-    left: 411px;
-    height: 1px;
-    width: 192px;
-    background-color: rgb(185, 185, 185);
-}
-.section-1__bottom-line {
-    position: absolute;
-}
-.section-1__bottom-line:before {
-    content: "";
-    position: absolute;
-    top: 468px;
-    left: -198px;
-    height: 1px;
-    width: 974px;
-    background-color: rgb(185, 185, 185);
+    bottom: 6px;
+    color: #ffffff;
+    font-family: "Lato-Bold";
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-left: 16px;
+    margin-right: 10px;
+    letter-spacing: 0.26px;
 }
 
-
-.content__left {
+.kid {
     display: flex;
-    flex-direction: column;
-    width: 947px;
-    height: 466px;
-    border-right: 1px solid rgb(185, 185, 185);
-
-}
-.content__right {
-    width: 453px;
-}
-.content__top {
-    display: flex;
-    justify-content: space-around;
-    padding-left: 93px;
-}
-.content__bottom {
-    position: relative;
-    display: flex;
+    align-items: flex-end;
     justify-content: flex-end;
- 
+    grid-area: k;
+    height: 245px;
+    background-image: url("/assets/images/kid.png");
 }
-.section-1__button {
-    position: absolute;
-    top: 85px;
-    right: -163px;
 
+.kid__panel {
+    display: flex;
+    margin-bottom: 28px;
+    height: 55px;
 }
-.button-1 {
+
+.kid__panel_baby-shop-button,
+.kid__panel_gift-button,
+.kid__panel_cart-button,
+.kid__panel_price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.kid__panel_baby-shop-button {
+    background-color: #05aecc;
     text-decoration: none;
-    color: rgb(103, 103, 103);
-    border: 1px solid rgb(185, 185, 185);
-    padding: 17px 35px;
-    border-radius: 35px;
-    background-color: #fff;
+    color: #ffffff;
+    font-family: "Lato-Regular";
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1.44px;
+    width: 103px;
 }
-.button-1__text {
-    position: relative;
-    bottom:3px;
+
+.kid__panel_gift-button {
+    background-color: #00a1be;
+    width: 53px;
 }
-.bottom-content {
-    position: relative;
-    bottom: 86px;
-    display: flex;
-    flex-direction: column;
-    margin-right: 45px;
+
+.kid__panel_cart-button {
+    background-color: #f0626e;
+    width: 53px;
 }
-.title-top {
-    display: flex;
-    justify-content: flex-end;
-}
-.title-top__text {
-    font-size: 60px;
-    color: rgb(83, 83, 83);
-    margin-bottom: 16px;
-}
-.title-bottom__text  {
+
+.kid__panel_price {
+    padding-top: 15px;
+    display: inline-block;
+    background-color: #323232;
+    color: #ffffff;
+    font-family: "Lato-Regular";
     font-size: 24px;
-    color: rgb(149, 147, 147);
+    font-weight: 400;
+    width: 86px;
 }
-.title-bottom__span {
-    display: flex;
-    justify-content: flex-end;
+.dollar-symbol {
+    font-size: 16px;
+}
+.super-line {
+    vertical-align:super;
+    font-size: 12px;
 }
