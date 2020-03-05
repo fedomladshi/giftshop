@@ -17,7 +17,7 @@
 .men {
     display: flex;
     align-items: flex-end;
-    background-image: url("/assets/images/men\'s\ wear.png");
+    background-image: url("../assets/images/men\'s\ wear.png");
     background-repeat: no-repeat;
     grid-area: m;
     padding-bottom: 12px;
@@ -88,7 +88,7 @@
     align-items: flex-end;
     grid-area: w;
     height: 320px;
-    background-image: url("/assets/images/women\'s\ wear.png");
+    background-image: url("../assets/images/women\'s\ wear.png");
 }
 
 .women-info {
@@ -133,7 +133,7 @@
     justify-content: flex-end;
     grid-area: k;
     height: 245px;
-    background-image: url("/assets/images/kid.png");
+    background-image: url("../assets/images/kid.png");
 }
 
 .kid__panel {
