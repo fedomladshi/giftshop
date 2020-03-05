@@ -13,15 +13,25 @@
     <link rel="stylesheet" href="css/media_container.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="libs/fontawesome-free-5.8.1-web/css/all.css">
-    <link href="libs/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <!--    <link href="libs/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css"/>-->
     <title>GiftShop</title>
+    <style>
+        .navigation__link,
+        .navigation__main-link {
+            text-decoration: none;
+        }
+
+    </style>
 </head>
 
-<body
+<body>
+
+
 <!--header-->
 <header class="header">
     <!--logo-->
-    <div class="container">
+    <!--    <div class="container">-->
+    <div class="container header-wrapper">
         <div class="logo__wrapper">
             <a href="">
                 <img class="logo" src="assets/images/logo.png" alt="логотип">
@@ -46,22 +56,25 @@
             <!--heder-nav main-->
             <nav class="navigation header__form">
                 <ul class="navigation__ul">
-                    <li class="header__form_item"><a class="navigation__link" href="#">Register</a></li>
-                    <li class="header__form_item header__form_item-red"><a class="navigation__link"
+                    <li class="header__form-item"><a class="navigation__link" href="#">Register</a></li>
+                    <li class="header__form-item header__form-item_red"><a class="navigation__link"
                                                                            href="#">Sign in</a></li>
-                    <li class="header__form_item"><a class="navigation__link" href="#">Whislost</a>
-                        <img src="img/whislost.png" alt=""></li>
-                    <li class="header__form_item header__form_item-red"><a class="navigation__link"
+                    <li class="header__form-item"><a class="navigation__link" href="#">Whislost</a>
+                        <img src="assets/images/whislost.png" alt=""></li>
+                    <li class="header__form-item header__form-item_red"><a class="navigation__link"
                                                                            href="#">Cart</a>
-                        <img src="img/cart.png" alt=""></li>
+                        <img src="assets/images/cart.png" alt=""></li>
                 </ul>
             </nav>
             <!--end heder-nav main-->
 
         </div>
+        <!--    </div>-->
+    </div>
 </header>
 <!--end header-->
 
+<!--start nav main-->
 <nav class="navigation navigation__main">
     <div class="container">
         <ul class="navigation__main-ul">
@@ -72,7 +85,7 @@
                 <!--submenu-->
                 <ul class="submenu">
                     <li class="submenu__item">
-                        <img src="img/nav_item_logo.png" alt="">
+                        <img src="assets/images/nav_item_logo.png" alt="">
                         <div class="submenu__content">
                             <h4>Item Name Here</h4>
                             <p>Lorem Ipsum is simply
@@ -82,7 +95,7 @@
                     </li>
 
                     <li class="submenu__item">
-                        <img src="img/nav_item_logo.png" alt="">
+                        <img src="assets/images/nav_item_logo.png" alt="">
                         <div class="submenu__content">
                             <h4>Item Name Here</h4>
                             <p>Lorem Ipsum is simply
@@ -92,7 +105,7 @@
                     </li>
 
                     <li class="submenu__item">
-                        <img src="img/nav_item_logo.png" alt="">
+                        <img src="assets/images/nav_item_logo.png" alt="">
                         <div class="submenu__content">
                             <h4>Item Name Here</h4>
                             <p>Lorem Ipsum is simply
@@ -113,11 +126,12 @@
             <li><a class="navigation__main-link" href="">Weddings </a></li>
             <li><a class="navigation__main-link" href=""> More</a></li>
         </ul>
-
     </div>
 </nav>
+<!--end nav main-->
 
 
+<!--section-slider-->
 <section class="section-slider">
     <div class="container slider">
         <div class="men">
@@ -150,12 +164,14 @@
                 <a href="" class="kid__panel_cart-button">
                     <img src="./assets/images/cart-icon.png" alt="cart-icon">
                 </a>
-                <p class="kid__panel_price"><span class="dollar-symbol">$</span>99.<span class="super-line">00</span>
-                </p>
+                <p class="kid__panel_price"><span class="dollar-symbol">$</span>99.<span
+                        class="super-line">00</span></p>
             </div>
         </div>
     </div>
 </section>
+<!--end section-slider-->
+
 </body>
 
 </html>
