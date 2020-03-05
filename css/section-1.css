@@ -1,5 +1,5 @@
 .section-slider {
-    padding-top: 228px;
+    padding-top: 226px;
 }
 
 .slider {
@@ -181,6 +181,7 @@
     font-size: 24px;
     font-weight: 400;
     width: 86px;
+    text-align: center;
 }
 .dollar-symbol {
     font-size: 16px;
