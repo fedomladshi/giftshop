@@ -9,7 +9,9 @@
     grid-template-rows: auto;
     grid-template-areas:
         "m w"
-        "m k";
+        "m k"
+        "s j"
+        "c j";
     grid-gap: 5px;
 }
 
@@ -189,4 +191,84 @@
 .super-line {
     vertical-align:super;
     font-size: 12px;
+}
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: s;
+    height: 171px;
+    background-color: #f0626e;
+}
+.search-line {
+    width: 485px;
+    height: 71px;
+    box-shadow: 1px 2px 7px rgba(0, 0, 0, 0.19);
+    text-align: center;
+    color: #c2c2c2;
+    font-family: "Lato-Bold";
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1.44px;
+}
+.search-button {
+    margin-left: 21px;
+}
+.jewelry {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    grid-area: j;
+    background-image: url("../assets/images/jewelry-bg.png");
+}
+.jewelry-article {
+    display: flex;
+    flex-direction: column;
+    width: 87px;
+    height: 396px;
+    background-color: rgba(54, 42, 79, 0.58);
+}
+.jewelry-article__text {
+    position: relative;
+    top: 201px;
+    left: 8px;
+    font-family: "Aparajita";
+    font-size: 66px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #ffffff;
+    transform: rotate(-90deg);
+}
+.jewelry-article__image {
+    position: relative;
+    width: 97px;
+    top: 18px;
+    right: 9px;
+    opacity: 1;
+}
+.crafts {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    grid-area: c;
+    background-image: url("../assets/images/crafts.png");
+    height: 335px;
+}
+.crafts-panel {
+    margin: 0px;
+}
+.crafts__panel_crafts-button {
+    display: flex;
+    background-color: #362a4f;
+    opacity: 0.8;
+    color: #ffffff;
+    font-family: "Lato-Regular";
+    font-size: 30px;
+    font-weight: 400;
+    text-transform: uppercase;
+    width: auto;
+    padding: 0 39px;
+}
+.crafts__panel_price {
+    padding: 15px 10px 0px 10px;
 }
