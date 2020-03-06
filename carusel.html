@@ -6,21 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
-            padding: 10px;
+            margin: 0;
             font-size: 15px;
         }
 
         .carousel {
             position: relative;
             width: 100%;
-
         }
 
         .carousel img {
             /* делаем этот элемент блочным, чтобы убрать лишнее пространство вокруг картинок */
             display: block;
         }
-
 
         /*.prev {*/
         /*    left: 7px;*/
@@ -53,7 +51,7 @@
         .gallery__butons-wrapper {
             position: absolute;
             top: -10rem;
-            right: 20px;
+            right: 71px;
         }
 
         .gallery__img {
@@ -71,6 +69,65 @@
 
         .container {
             border: 1px solid black;
+        }
+
+        .container {
+            margin-top: 300px !important;
+        }
+
+
+        .arrow {
+            position: absolute;
+            padding: 0;
+            width: 70px;
+            height: 79px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #3c3c3c;
+            color: #ffffff;
+            transition: 0.5s;
+            font-size: 24px;
+        }
+
+        .arrow:focus {
+            outline: none;
+            background-color: #05aecc;
+        }
+
+        .arrow:hover {
+            background-color: #05aecc;
+            cursor: pointer;
+        }
+
+        .arrow__prev {
+            background-image: url("assets/images/Shape_to_left.png");
+            width: 15px;
+            height: 24px;
+        }
+
+        .arrow__next {
+            background-image: url("assets/images/Shape_to_right.png");
+            width: 15px;
+            height: 24px;
+        }
+
+        .prev {
+            left: -71px;
+        }
+
+
+        @media only screen and (max-width: 767px) and (min-width: 480px) {
+            .carousel {
+
+            }
+
+        }
+
+        @media only screen and (max-width: 460px) {
+            .carousel {
+
+            }
         }
 
 
@@ -139,55 +196,11 @@
 
         }
 
-        .container {
-            margin-top: 300px !important;
-        }
-
-
-        .arrow {
-            position: absolute;
-            padding: 0;
-            /*border-radius: 15px;*/
-            /*border: 1px solid gray;*/
-            /*font-size: 24px;*/
-            /*line-height: 24px;*/
-            /*color: #444;*/
-            /*display: block;*/
-            width: 70px;
-            height: 79px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #3c3c3c;
-            color: #ffffff;
-            transition: 0.5s;
-            font-size: 24px;
-        }
-
-        .arrow:focus {
-            outline: none;
-            background-color: #05aecc;
-        }
-
-        .arrow:hover {
-            background-color: #05aecc;
-            cursor: pointer;
-        }
-
-        .arrow__prev {
-            background-image: url("assets/images/Shape_to_left.png");
-            width: 15px;
-            height: 24px;
-        }
-
-        .arrow__next {
-            background-image: url("assets/images/Shape_to_right.png");
-            width: 15px;
-            height: 24px;
-        }
+        /*--------end hover panel -----*/
 
     </style>
 
+    <link rel="stylesheet" href="css/gallery.css">
     <link rel="stylesheet" href="css/media_container.css">
 </head>
 
@@ -199,7 +212,10 @@
         <div class="gallery">
             <ul class="images">
                 <li class="images__item"><img class="gallery__img" src="assets/images/women-bag.png"></li>
+
                 <li class="images__item"><img class="gallery__img" src="assets/images/jewelry.png"></li>
+
+
                 <li class="images__item"><img class="gallery__img" src="assets/images/mans-watch.png"></li>
 
                 <li class="images__item"><img class="gallery__img" src="assets/images/women-bag.png"></li>
@@ -225,9 +241,17 @@
     }
 
     /* конфигурация */
-    let width = 370; // ширина картинки
-    let count = 3; // видимое количество изображений
+    if (window.matchMedia("(min-width: 1200px)").matches) {
+        var width = 21;
+    }
+    else if(window.matchMedia("(min-width: 992px)").matches) {
+        var width = 48; // ширина картинки
+    }
+    else {
+        var width = 100; // ширина картинки
+    }
 
+    let count = 1; // видимое количество изображений
     let list = carousel.querySelector('ul');
     let listElems = carousel.querySelectorAll('li');
 
@@ -238,7 +262,7 @@
         position += width * count;
         // последнее передвижение влево может быть не на 3, а на 2 или 1 элемент
         position = Math.min(position, 0)
-        list.style.marginLeft = position + 'px';
+        list.style.marginLeft = position + 'vw';
     };
 
     carousel.querySelector('.next').onclick = function () {
@@ -246,7 +270,7 @@
         position -= width * count;
         // последнее передвижение вправо может быть не на 3, а на 2 или 1 элемент
         position = Math.max(position, -width * (listElems.length - count));
-        list.style.marginLeft = position + 'px';
+        list.style.marginLeft = position + 'vw';
     };
 </script>
 
