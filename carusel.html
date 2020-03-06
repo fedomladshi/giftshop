@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <!--    <link rel="stylesheet" href="style.css">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            padding: 10px;
+            font-size: 15px;
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+
+        }
+
+        .carousel img {
+            /* делаем этот элемент блочным, чтобы убрать лишнее пространство вокруг картинок */
+            display: block;
+        }
+
+
+        /*.prev {*/
+        /*    left: 7px;*/
+        /*}*/
+
+        /*.next {*/
+        /*    right: 7px;*/
+        /*}*/
+
+        .gallery {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .gallery ul {
+            width: 9999px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            transition: margin-left 1250ms;
+            /* удаляем пустое пространство между элементами li, у которых установлен inline-block */
+            /* http://davidwalsh.name/remove-whitespace-inline-block */
+            font-size: 0;
+        }
+
+        .gallery li {
+            display: inline-block;
+        }
+
+        .gallery__butons-wrapper {
+            position: absolute;
+            top: -10rem;
+            right: 20px;
+        }
+
+        .gallery__img {
+            width: 100%;
+        }
+
+        .images {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .images__item {
+            padding-right: 2rem;
+        }
+
+        .container {
+            border: 1px solid black;
+        }
+
+
+        /*---hover panel-----*/
+
+
+        .kid__panel {
+            display: flex;
+            margin-bottom: 28px;
+            height: 55px;
+        }
+
+        .kid__panel_baby-shop-button,
+        .kid__panel_gift-button,
+        .kid__panel_cart-button,
+        .kid__panel_price {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .kid__panel_baby-shop-button {
+            background-color: #05aecc;
+            text-decoration: none;
+            color: #ffffff;
+            font-family: "Lato-Regular";
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 1.44px;
+            width: 103px;
+        }
+
+        .kid__panel_gift-button {
+            background-color: #00a1be;
+            width: 53px;
+        }
+
+        .kid__panel_cart-button {
+            background-color: #f0626e;
+            width: 53px;
+        }
+
+        .kid__panel_price {
+            padding-top: 15px;
+            display: inline-block;
+            background-color: #323232;
+            color: #ffffff;
+            font-family: "Lato-Regular";
+            font-size: 24px;
+            font-weight: 400;
+            width: 86px;
+            text-align: center;
+        }
+
+        .dollar-symbol {
+            font-size: 16px;
+        }
+
+        .super-line {
+            vertical-align: super;
+            font-size: 12px;
+        }
+
+
+        .images__item:hover {
+
+        }
+
+        .container {
+            margin-top: 300px !important;
+        }
+
+
+        .arrow {
+            position: absolute;
+            padding: 0;
+            /*border-radius: 15px;*/
+            /*border: 1px solid gray;*/
+            /*font-size: 24px;*/
+            /*line-height: 24px;*/
+            /*color: #444;*/
+            /*display: block;*/
+            width: 70px;
+            height: 79px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #3c3c3c;
+            color: #ffffff;
+            transition: 0.5s;
+            font-size: 24px;
+        }
+
+        .arrow:focus {
+            outline: none;
+            background-color: #05aecc;
+        }
+
+        .arrow:hover {
+            background-color: #05aecc;
+            cursor: pointer;
+        }
+
+        .arrow__prev {
+            background-image: url("assets/images/Shape_to_left.png");
+            width: 15px;
+            height: 24px;
+        }
+
+        .arrow__next {
+            background-image: url("assets/images/Shape_to_right.png");
+            width: 15px;
+            height: 24px;
+        }
+
+    </style>
+
+    <link rel="stylesheet" href="css/media_container.css">
+</head>
+
+<body>
+
+<div class="container">
+    <div id="carousel" class="carousel">
+
+        <div class="gallery">
+            <ul class="images">
+                <li class="images__item"><img class="gallery__img" src="assets/images/women-bag.png"></li>
+                <li class="images__item"><img class="gallery__img" src="assets/images/jewelry.png"></li>
+                <li class="images__item"><img class="gallery__img" src="assets/images/mans-watch.png"></li>
+
+                <li class="images__item"><img class="gallery__img" src="assets/images/women-bag.png"></li>
+                <li class="images__item"><img class="gallery__img" src="assets/images/jewelry.png"></li>
+                <li class="images__item"><img class="gallery__img" src="assets/images/mans-watch.png"></li>
+            </ul>
+        </div>
+
+        <div class="gallery__butons-wrapper">
+            <a class="arrow prev"><i class="arrow__prev"></i> </a>
+            <a class="arrow next"><i class="arrow__next"></i> </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    /* этот код помечает картинки, для удобства разработки */
+    let i = 1;
+    for (let li of carousel.querySelectorAll('li')) {
+        li.style.position = 'relative';
+        li.insertAdjacentHTML('beforeend', `<span style="position:absolute;left:0;top:0">${i}</span>`);
+        i++;
+    }
+
+    /* конфигурация */
+    let width = 370; // ширина картинки
+    let count = 3; // видимое количество изображений
+
+    let list = carousel.querySelector('ul');
+    let listElems = carousel.querySelectorAll('li');
+
+    let position = 0; // положение ленты прокрутки
+
+    carousel.querySelector('.prev').onclick = function () {
+        // сдвиг влево
+        position += width * count;
+        // последнее передвижение влево может быть не на 3, а на 2 или 1 элемент
+        position = Math.min(position, 0)
+        list.style.marginLeft = position + 'px';
+    };
+
+    carousel.querySelector('.next').onclick = function () {
+        // сдвиг вправо
+        position -= width * count;
+        // последнее передвижение вправо может быть не на 3, а на 2 или 1 элемент
+        position = Math.max(position, -width * (listElems.length - count));
+        list.style.marginLeft = position + 'px';
+    };
+</script>
+
+</body>
+</html>
