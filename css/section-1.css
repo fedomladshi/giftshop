@@ -3,6 +3,7 @@
 }
 
 .slider {
+    font-size: 1em;
     display: grid;
     justify-content: center;
     grid-template-columns: 670px 494px;
@@ -45,7 +46,7 @@
 .men-info__article-title {
     color: #ef5966;
     font-family: "Aparajita";
-    font-size: 58px;
+    font-size: 3.625em;
     font-weight: bold;
     text-transform: uppercase;
     margin-top: 13px;
@@ -57,7 +58,7 @@
     bottom: 8px;
     color: #ffffff;
     font-family: "Lato-Bold";
-    font-size: 13px;
+    font-size: 0.8125em;
     font-weight: bold;
     text-transform: uppercase;
     margin-left: 22px;
@@ -79,7 +80,7 @@
     letter-spacing: 0.43px;
     color: #ffffff;
     font-family: "Aparajita";
-    font-size: 20px;
+    font-size: 1.25em;
     font-weight: bold;
     text-transform: uppercase;
     /* margin: 10px 14px 12px 15px; */
@@ -243,7 +244,7 @@
     position: relative;
     width: 97px;
     top: 18px;
-    right: 9px;
+    right: 10px;
     opacity: 1;
 }
 .crafts {
@@ -272,3 +273,101 @@
 .crafts__panel_price {
     padding: 15px 10px 0px 10px;
 }
+
+@media screen and (max-width: 1200px) {
+    .slider {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+                "m m"
+                "w k"
+                "s s"
+                "c j";
+        grid-gap: 5px;
+    }
+    .kid {
+        background-size: 120% 100%;
+        background-repeat: no-repeat;
+        height: auto;
+    }
+    .men {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        background-size: cover;
+        height: 570px;
+    }
+    .crafts {
+        height: auto;
+        background-size: cover;
+    }
+}
+
+@media screen and  (max-width: 992px) {
+    .slider {
+        grid-gap: 3px;
+    }
+    .kid {
+        background-size: cover;
+        background-position-x: center;
+    }
+    .kid__panel {
+        margin-bottom: 10px;
+        height: 40px;
+    }
+    .kid__panel a img {
+        width: 20px;
+    }
+    .kid__panel_baby-shop-button {
+        font-size: 15px;
+    }
+    .kid__panel_price {
+        padding-top: 10px;
+        font-size:18px;
+    }
+    .jewelry-article {
+        position: relative;
+        right: 4px;
+    }
+    .search {
+        height: 110px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .slider {
+        grid-template-columns: 90%;
+        grid-template-rows: auto;
+        grid-template-areas:
+                "m"
+                "w"
+                "k"
+                "s"
+                "c"
+                "j";
+        grid-gap: 5px;
+    }
+    .men {
+        grid-column-start: 1;
+        grid-column-end: 1;
+    }
+    .women {
+        background-size: cover;
+    }
+    .kid {
+        background-size: cover;
+        height: 320px;
+    }
+    .search-line {
+        height: 47px;
+        font-size: 15px;
+    }
+    .search-button {
+        width: 40px;
+    }
+    .crafts {
+        height: 335px;
+    }
+    .jewelry {
+        background-size: cover;
+    }
+ }
