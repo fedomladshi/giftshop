@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="css/media_container.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="libs/fontawesome-free-5.8.1-web/css/all.css">
+
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <!--    <link href="libs/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css"/>-->
     <title>GiftShop</title>
     <style>
@@ -21,22 +24,27 @@
             text-decoration: none;
         }
 
-        .section-new-products {
-            margin: 24px 0 135px;
+        .section-new-products__container {
+            position: relative;
         }
 
-        .section-new-products__container {
+        body {
+            font-size: 15px;
+        }
+
+        .carousel {
             position: relative;
         }
 
         .section__title-wrapper {
             width: 100%;
+            height: 105px;
             border-bottom: 1px solid #b9b9b9;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: space-between;
-            margin-bottom: 24px;
+            margin-bottom: 27px;
         }
 
         .section__title {
@@ -50,14 +58,383 @@
             align-items: flex-end;
         }
 
-        body {
-            font-size: 15px;
+        .kid__panel-hover {
+            display: none;
         }
+
+        .images__item:hover {
+            cursor: pointer;
+            opacity: 1.88;
+        }
+
+        .images__item:hover .kid__panel-hover {
+            display: flex;
+        }
+
+        .wrapper-opacity {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, .9);
+            opacity: 0;
+        }
+
+        .images__item:hover .wrapper-opacity {
+            opacity: 0.88;
+        }
+
+        .kid__panel-hover {
+            position: absolute;
+            top: 73px;
+            left: 39px;
+            z-index: 9;
+        }
+
     </style>
     <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
 </head>
 
 <body>
+
+
+<!--header-->
+<header class="header">
+    <!--logo-->
+    <!--    <div class="container">-->
+    <div class="container header-wrapper">
+        <div class="logo__wrapper">
+            <a href="">
+                <img class="logo" src="assets/images/logo.png" alt="логотип">
+            </a>
+        </div>
+        <!--end logo-->
+
+        <div class="header__content">
+            <!--nav first-->
+            <nav class="navigation header__navigation">
+                <ul class="navigation__ul">
+                    <li><a class=" " href="#">Sell</a></li>
+                    <li><a class="navigation__link" href="#">Registry</a></li>
+                    <li><a class="navigation__link" href="#">Community</a></li>
+                    <li><a class="navigation__link" href="#">Blogs</a></li>
+                    <li><a class="navigation__link" href="#">Mobile</a></li>
+                    <li><a class="navigation__link" href="#">Gift Cards</a></li>
+                </ul>
+            </nav>
+            <!--end nav first-->
+
+            <!--heder-nav main-->
+            <nav class="navigation header__form">
+                <ul class="navigation__ul">
+                    <li class="header__form-item"><a class="navigation__link" href="#">Register</a></li>
+                    <li class="header__form-item header__form-item_red"><a class="navigation__link"
+                                                                           href="#">Sign in</a></li>
+                    <li class="header__form-item"><a class="navigation__link" href="#">Whislost</a>
+                        <img src="assets/images/whislost.png" alt=""></li>
+                    <li class="header__form-item header__form-item_red"><a class="navigation__link"
+                                                                           href="#">Cart</a>
+                        <img src="assets/images/cart.png" alt=""></li>
+                </ul>
+            </nav>
+            <!--end heder-nav main-->
+
+        </div>
+        <!--    </div>-->
+    </div>
+</header>
+<!--end header-->
+
+<!--start nav main-->
+<nav class="navigation navigation__main">
+    <div class="container">
+        <ul class="navigation__main-ul">
+            <li><a class="navigation__main-link" href="">Art</a></li>
+            <li class="navigation__main_item">
+                <a class="navigation__main-link" href="">Home & Living</a>
+
+                <!--submenu-->
+                <ul class="submenu">
+                    <li class="submenu__item">
+                        <img src="assets/images/nav_item_logo.png" alt="">
+                        <div class="submenu__content">
+                            <h4>Item Name Here</h4>
+                            <p>Lorem Ipsum is simply
+                                dummy text of the</p>
+                            <a href="">More Detail</a>
+                        </div>
+                    </li>
+
+                    <li class="submenu__item">
+                        <img src="assets/images/nav_item_logo.png" alt="">
+                        <div class="submenu__content">
+                            <h4>Item Name Here</h4>
+                            <p>Lorem Ipsum is simply
+                                dummy text of the</p>
+                            <a href="">More Detail</a>
+                        </div>
+                    </li>
+
+                    <li class="submenu__item">
+                        <img src="assets/images/nav_item_logo.png" alt="">
+                        <div class="submenu__content">
+                            <h4>Item Name Here</h4>
+                            <p>Lorem Ipsum is simply
+                                dummy text of the</p>
+                            <a href="">More Detail</a>
+                        </div>
+                    </li>
+
+                </ul>
+                <!--end submenu-->
+            </li>
+            <li><a class="navigation__main-link" href="">Jewelry</a></li>
+            <li><a class="navigation__main-link" href="">Women </a></li>
+            <li><a class="navigation__main-link" href=""> Men </a></li>
+            <li><a class="navigation__main-link" href="">Kids</a></li>
+            <li><a class="navigation__main-link" href="">Vintage</a></li>
+            <li><a class="navigation__main-link" href="">Weddings </a></li>
+            <li><a class="navigation__main-link" href=""> More</a></li>
+        </ul>
+    </div>
+</nav>
+<!--end nav main-->
+
+<!--section-slider-->
+<section class="section-slider">
+    <div class="container slider">
+        <div class="men">
+            <div class="men-info">
+                <div class="men-info__article">
+                    <h1 class="men-info__article-title">Men’s Wear</h1>
+                    <p class="men-info__article-description">Lorem Ipsum is simply dummy text of the
+                        printing and typesetting industry. Lorem</p>
+                </div>
+                <div class="men-info__theme">
+                    <p class="men-info__theme-text"> Lorem Ipsum is simply dummy text</p>
+                </div>
+            </div>
+        </div>
+        <div class="women">
+            <div class="women-info">
+                <div class="women-info__article">
+                    <h1 class="women-info__article-title">Women’s Wear</h1>
+                    <p class="women-info__article-description">Lorem Ipsum is simply dummy text
+                        of the printing and typesetting</p>
+                </div>
+            </div>
+        </div>
+        <div class="kid">
+            <div class="kid__panel">
+                <a href="" class="kid__panel_baby-shop-button">Baby Shop</a>
+                <a href="" class="kid__panel_gift-button">
+                    <img src="./assets/images/gift-icon.png" alt="gift-icon">
+                </a>
+                <a href="" class="kid__panel_cart-button">
+                    <img src="./assets/images/cart-icon.png" alt="cart-icon">
+                </a>
+                <p class="kid__panel_price"><span class="dollar-symbol">$</span>99.<span
+                        class="super-line">00</span></p>
+            </div>
+        </div>
+        <div class="search">
+            <input type="text" class="search-line" placeholder="Search your product here ( e.g.: Silver diamond ring )">
+            <img src="./assets/images/magnifier.png" class="search-button" alt="magnifier">
+        </div>
+        <div class="jewelry">
+            <div class="jewelry-article">
+                <img src="./assets/images/jewelry-image.png" class="jewelry-article__image" alt="jewelry-image">
+                <p class="jewelry-article__text">jewelry</p>
+            </div>
+        </div>
+        <div class="crafts">
+            <div class="kid__panel crafts-panel">
+                <a href="" class="kid__panel_baby-shop-button crafts__panel_crafts-button">crafts</a>
+                <a href="" class="kid__panel_gift-button">
+                    <img src="./assets/images/gift-icon.png" alt="gift-icon">
+                </a>
+                <a href="" class="kid__panel_cart-button">
+                    <img src="./assets/images/cart-icon.png" alt="cart-icon">
+                </a>
+                <p class="kid__panel_price crafts__panel_price"><span class="dollar-symbol">$</span>99.<span
+                        class="super-line">00</span></p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--end section-slider-->
+
+<!--section-new-products-->
+<section class="section-new-products">
+    <div class="container section-new-products__container">
+
+        <div id="carousel" class="carousel">
+
+            <div class="section__title-wrapper">
+                <h2 class="section__title">
+                    New Products
+                </h2>
+            </div>
+
+            <div class="gallery">
+                <ul class="images">
+                    <li class="images__item"><img class="gallery__img" src="assets/images/women-bag.png"></li>
+                    <li class="images__item">
+                        <img class="gallery__img" src="assets/images/jewelry.png">
+                        <div class="wrapper-opacity"></div>
+
+                        <div class="kid__panel kid__panel-hover">
+                            <a href="" class="kid__panel_baby-shop-button">Baby Shop</a>
+                            <a href="" class="kid__panel_gift-button">
+                                <img src="./assets/images/gift-icon.png" alt="gift-icon">
+                            </a>
+                            <a href="" class="kid__panel_cart-button">
+                                <img src="./assets/images/cart-icon.png" alt="cart-icon">
+                            </a>
+                            <p class="kid__panel_price"><span class="dollar-symbol">$</span>99.<span
+                                    class="super-line">00</span></p>
+                        </div>
+                    </li>
+                    <li class="images__item"><img class="gallery__img" src="assets/images/mans-watch.png"></li>
+                    <li class="images__item"><img class="gallery__img" src="assets/images/women-bag.png"></li>
+                    <li class="images__item"><img class="gallery__img" src="assets/images/jewelry.png"></li>
+                    <li class="images__item"><img class="gallery__img" src="assets/images/mans-watch.png"></li>
+                </ul>
+                <div class="gallery__butons-wrapper">
+                    <a class="arrow prev"><i class="arrow__prev"></i> </a>
+                    <a class="arrow next"><i class="arrow__next"></i> </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--section-featured-products-->
+<section class="section-featured-products">
+    <div class="container section-featured-products__container">
+
+
+    </div>
+</section>
+<!--end section-featured-products-->
+
+
+<!--end section-new-products-->
+<!--section-new-products-->
+<!--<section class="section-new-products">-->
+<!--    <div class="container">-->
+
+<!--        <div class="section__title-wrapper">-->
+<!--            <h2 class="section__title"></h2>-->
+<!--            <div class="section-new-products__">-->
+<!--                <a href=""><i></i></a>-->
+<!--                <a href=""><i></i></a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+
+<!--script gallery- -->
+<script>
+    /* этот код помечает картинки, для удобства разработки */
+    let i = 1;
+    for (let li of carousel.querySelectorAll('li')) {
+        li.style.position = 'relative';
+        li.insertAdjacentHTML('beforeend', `<span style="position:absolute;left:0;top:0">${i}</span>`);
+        i++;
+    }
+
+    /* конфигурация */
+    if (window.matchMedia("(min-width: 1200px)").matches) {
+        var width = 21;
+    } else if (window.matchMedia("(min-width: 992px)").matches) {
+        var width = 48; // ширина картинки
+    } else {
+        var width = 100; // ширина картинки
+    }
+
+    let count = 1; // видимое количество изображений
+    let list = carousel.querySelector('ul');
+    let listElems = carousel.querySelectorAll('li');
+
+    let position = 0; // положение ленты прокрутки
+
+    // let prev = document.getElementsByClassName('.prev');
+    // let next = document.getElementsByClassName('.next');
+
+    carousel.querySelector('.prev').onclick = function () {
+        // prev.onclick = function () {
+        // сдвиг влево
+        position += width * count;
+        // последнее передвижение влево может быть не на 3, а на 2 или 1 элемент
+        position = Math.min(position, 0)
+        list.style.marginLeft = position + 'vw';
+    };
+
+    // carousel.querySelector('.prev').onclick = function () {
+    // next.onclick = function () {
+    carousel.querySelector('.next').onclick = function () {
+        // сдвиг вправо
+        position -= width * count;
+        // последнее передвижение вправо может быть не на 3, а на 2 или 1 элемент
+        position = Math.max(position, -width * (listElems.length - count));
+        list.style.marginLeft = position + 'vw';
+    }
+</script>
+<!--end script gallery- -->
+
+
+<h2>Lazy Loading</h2>
+<div class="slider lazy">
+    <div>
+        <div class="image">
+            <img data-lazy="img/lazyfonz1.png"/>
+        </div>
+    </div>
+    <div>
+        <div class="image">
+            <img data-lazy="img/lazyfonz2.png"/>
+        </div>
+    </div>
+    <div>
+        <div class="image">
+            <img data-lazy="img/lazyfonz3.png"/>
+        </div>
+    </div>
+    <div>
+        <div class="image">
+            <img data-lazy="img/lazyfonz4.png"/>
+        </div>
+    </div>
+    <div>
+        <div class="image">
+            <img data-lazy="img/lazyfonz5.png"/>
+        </div>
+    </div>
+    <div>
+        <div class="image">
+            <img data-lazy="img/lazyfonz6.png"/>
+        </div>
+    </div>
+</div>
+
+<pre><code class="language-javascript"></code></pre>
+
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+
+</script>
+
+</body>
+
+</html>
+
 
 <!--header-->
 <!--<header class="header">-->
@@ -161,171 +538,3 @@
 <!--    </div>-->
 <!--</nav>-->
 <!--end nav main-->
-
-
-<!--section-slider-->
-<section class="section-slider">
-    <div class="container slider">
-        <div class="men">
-            <div class="men-info">
-                <div class="men-info__article">
-                    <h1 class="men-info__article-title">Men’s Wear</h1>
-                    <p class="men-info__article-description">Lorem Ipsum is simply dummy text of the
-                        printing and typesetting industry. Lorem</p>
-                </div>
-                <div class="men-info__theme">
-                    <p class="men-info__theme-text"> Lorem Ipsum is simply dummy text</p>
-                </div>
-            </div>
-        </div>
-        <div class="women">
-            <div class="women-info">
-                <div class="women-info__article">
-                    <h1 class="women-info__article-title">Women’s Wear</h1>
-                    <p class="women-info__article-description">Lorem Ipsum is simply dummy text
-                        of the printing and typesetting</p>
-                </div>
-            </div>
-        </div>
-        <div class="kid">
-            <div class="kid__panel">
-                <a href="" class="kid__panel_baby-shop-button">Baby Shop</a>
-                <a href="" class="kid__panel_gift-button">
-                    <img src="./assets/images/gift-icon.png" alt="gift-icon">
-                </a>
-                <a href="" class="kid__panel_cart-button">
-                    <img src="./assets/images/cart-icon.png" alt="cart-icon">
-                </a>
-                <p class="kid__panel_price"><span class="dollar-symbol">$</span>99.<span
-                        class="super-line">00</span></p>
-            </div>
-        </div>
-        <div class="search">
-            <input type="text" class="search-line" placeholder="Search your product here ( e.g.: Silver diamond ring )">
-            <img src="./assets/images/magnifier.png" class="search-button" alt="magnifier">
-        </div>
-        <div class="jewelry">
-            <div class="jewelry-article">
-                <img src="./assets/images/jewelry-image.png" class="jewelry-article__image" alt="jewelry-image">
-                <p class="jewelry-article__text">jewelry</p>
-            </div>
-        </div>
-        <div class="crafts">
-            <div class="kid__panel crafts-panel">
-                <a href="" class="kid__panel_baby-shop-button crafts__panel_crafts-button">crafts</a>
-                <a href="" class="kid__panel_gift-button">
-                    <img src="./assets/images/gift-icon.png" alt="gift-icon">
-                </a>
-                <a href="" class="kid__panel_cart-button">
-                    <img src="./assets/images/cart-icon.png" alt="cart-icon">
-                </a>
-                <p class="kid__panel_price crafts__panel_price"><span class="dollar-symbol">$</span>99.<span
-                        class="super-line">00</span></p>
-            </div>
-        </div>
-    </div>
-</section>
-<!--end section-slider-->
-
-<!--section-new-products-->
-<!--<section class="section-new-products">-->
-<!--    <div class="container">-->
-
-<!--        <div class="section__title-wrapper">-->
-<!--            <h2 class="section__title"></h2>-->
-<!--            <div class="section-new-products__">-->
-<!--                <a href=""><i></i></a>-->
-<!--                <a href=""><i></i></a>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</section>-->
-
-<!--section-new-products-->
-<section class="section-new-products">
-    <div class="container section-new-products__container">
-
-
-        <div class="section__title-wrapper">
-            <h2 class="section__title">
-                New Products
-            </h2>
-
-
-        </div>
-
-        <div id="carousel" class="carousel">
-            <div class="gallery">
-                <ul class="images">
-                    <li class="images__item"><img class="gallery__img" src="assets/images/women-bag.png"></li>
-                    <li class="images__item"><img class="gallery__img" src="assets/images/jewelry.png"></li>
-                    <li class="images__item"><img class="gallery__img" src="assets/images/mans-watch.png"></li>
-                    <li class="images__item"><img class="gallery__img" src="assets/images/women-bag.png"></li>
-                    <li class="images__item"><img class="gallery__img" src="assets/images/jewelry.png"></li>
-                    <li class="images__item"><img class="gallery__img" src="assets/images/mans-watch.png"></li>
-                </ul>
-
-            </div>
-
-            <div class="gallery__butons-wrapper">
-                <a class="arrow prev"><i class="arrow__prev"></i> </a>
-                <a class="arrow next"><i class="arrow__next"></i> </a>
-            </div>
-        </div>
-    </div>
-</section>
-<!--end section-new-products-->
-
-
-<!--script gallery--->
-<script>
-    /* этот код помечает картинки, для удобства разработки */
-    let i = 1;
-    for (let li of carousel.querySelectorAll('li')) {
-        li.style.position = 'relative';
-        li.insertAdjacentHTML('beforeend', `<span style="position:absolute;left:0;top:0">${i}</span>`);
-        i++;
-    }
-
-    /* конфигурация */
-    if (window.matchMedia("(min-width: 1200px)").matches) {
-        var width = 21;
-    } else if (window.matchMedia("(min-width: 992px)").matches) {
-        var width = 48; // ширина картинки
-    } else {
-        var width = 100; // ширина картинки
-    }
-
-    let count = 1; // видимое количество изображений
-    let list = carousel.querySelector('ul');
-    let listElems = carousel.querySelectorAll('li');
-
-    let position = 0; // положение ленты прокрутки
-
-    // let prev = document.getElementsByClassName('.prev');
-    // let next = document.getElementsByClassName('.next');
-
-    carousel.querySelector('.prev').onclick = function () {
-    // prev.onclick = function () {
-        // сдвиг влево
-        position += width * count;
-        // последнее передвижение влево может быть не на 3, а на 2 или 1 элемент
-        position = Math.min(position, 0)
-        list.style.marginLeft = position + 'vw';
-    };
-
-    // carousel.querySelector('.prev').onclick = function () {
-    // next.onclick = function () {
-        carousel.querySelector('.next').onclick = function () {
-        // сдвиг вправо
-        position -= width * count;
-        // последнее передвижение вправо может быть не на 3, а на 2 или 1 элемент
-        position = Math.max(position, -width * (listElems.length - count));
-        list.style.marginLeft = position + 'vw';
-    }
-</script>
-<!--end script gallery--->
-
-</body>
-
-</html>
